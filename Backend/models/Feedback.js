@@ -4,6 +4,10 @@ const feedbackSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true,
+    },
+    category: {
+        type: String,
+        required: true,
     }
 });
 
