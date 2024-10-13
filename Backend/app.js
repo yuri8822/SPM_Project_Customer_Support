@@ -10,7 +10,7 @@ require('dotenv').config();
 
 
 // Connect to MongoDB
-mongoose.connect(''); // Add MongoDB URI here
+mongoose.connect('mongodb+srv://umaryuri88:hJ1JFPMEIrCAZXLw@spm.swho2.mongodb.net/CustomerSupport');
 mongoose.connection.once('open', () => { console.log('Connected to MongoDB Successfully') });
 
 app.use(cors());
