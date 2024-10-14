@@ -1,10 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const jwt = require('jsonwebtoken');
+import express from 'express';
+import jwt from 'jsonwebtoken';
 // Add models here:
-const Rating = require('./models/Rating');
-const Feedback = require('./models/Feedback');
+import Rating from './models/Rating';
+import Feedback from './models/Feedback';
 
+const router = express.Router();
 
 // Add routes here:
 
@@ -23,4 +23,4 @@ router.post('/addrating', async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

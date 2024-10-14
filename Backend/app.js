@@ -1,16 +1,19 @@
-const express = require('express');
-const router = require('./routes');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+import express from 'express';
+import router from './routes.js';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import dotenv from 'dotenv';
 
 const app = express();
-const port = 3000;
-require('dotenv').config();
+const port = process.env.PORT || 3000;
+dotenv.config();
 
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://umaryuri88:hJ1JFPMEIrCAZXLw@spm.swho2.mongodb.net/CustomerSupport');
+mongoose.connect(process.env.MONGO_URI).catch(err => {
+    console.error('Error connecting to MongoDB', err);
+});
 mongoose.connection.once('open', () => { console.log('Connected to MongoDB Successfully') });
 
 app.use(cors());
