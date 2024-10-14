@@ -1,8 +1,8 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 // Add models here:
-import Rating from './models/Rating';
-import Feedback from './models/Feedback';
+import Rating from './models/Rating.js';
+import Feedback from './models/Feedback.js';
 
 const router = express.Router();
 
